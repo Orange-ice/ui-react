@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
   mode: 'development',
   entry: './lib/index.tsx',
+  // 指明需要打包的文件
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx']
   },
@@ -26,5 +27,20 @@ module.exports = {
       title: 'ice-ui---React',
       template: 'index.html'
     })
-  ]
+  ],
+  // 声明这是外部依赖，不参与打包
+  externals: {
+    react: {
+      commonjs: 'react',
+      commonjs2: 'react',
+      amd: 'react',
+      root: 'React'
+    },
+    'react-dom': {
+      commonjs: 'react-dom',
+      commonjs2: 'react-dom',
+      amd: 'react-dom',
+      root: 'ReactDOM'
+    }
+  }
 }
