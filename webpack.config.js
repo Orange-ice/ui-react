@@ -1,9 +1,12 @@
-const path = require('path');
+const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
   entry: './lib/index.tsx',
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.jsx']
+  },
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist/lib'),
@@ -13,7 +16,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: '/\.tsx?$/',
+        test: /\.tsx?$/,
         loader: 'awesome-typescript-loader'
       }
     ]
@@ -24,4 +27,4 @@ module.exports = {
       template: 'index.html'
     })
   ]
-};
+}

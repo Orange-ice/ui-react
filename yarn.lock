@@ -3251,6 +3251,11 @@ type@^2.0.0:
   resolved "https://registry.npm.taobao.org/type/download/type-2.5.0.tgz?cache=0&sync_timestamp=1615215462572&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ftype%2Fdownload%2Ftype-2.5.0.tgz#0a2e78c2e77907b252abe5f298c1b01c63f0db3d"
   integrity sha1-Ci54wud5B7JSq+XymMGwHGPw2z0=
 
+typescript@^4.3.2:
+  version "4.3.2"
+  resolved "https://registry.nlark.com/typescript/download/typescript-4.3.2.tgz?cache=0&sync_timestamp=1622620189092&other_urls=https%3A%2F%2Fregistry.nlark.com%2Ftypescript%2Fdownload%2Ftypescript-4.3.2.tgz#399ab18aac45802d6f2498de5054fcbbe716a805"
+  integrity sha1-OZqxiqxFgC1vJJjeUFT8u+cWqAU=
+
 union-value@^1.0.0:
   version "1.0.1"
   resolved "https://registry.nlark.com/union-value/download/union-value-1.0.1.tgz#0b6fe7b835aecda61c6ea4d4f02c14221e109847"

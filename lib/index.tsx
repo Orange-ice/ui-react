@@ -1,3 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
+import Button from './Button';
 
-console.log(React);
+ReactDOM.render(<Button/>, document.body)
