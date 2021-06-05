@@ -7,7 +7,6 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js', '.jsx']
   },
   output: {
-    filename: 'main.js',
     path: path.resolve(__dirname, 'dist/lib'),
     library: 'CUI',
     libraryTarget: 'umd'
@@ -16,7 +15,8 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        loader: 'awesome-typescript-loader'
+        use: 'ts-loader',
+        exclude: /node_modules/,
       }
     ]
   }
