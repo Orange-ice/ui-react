@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Icon 组件测试 渲染 1`] = `
+<svg
+  className="ice-icon"
+>
+  <use
+    xlinkHref="#github"
+  />
+</svg>
+`;
