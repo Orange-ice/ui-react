@@ -18,7 +18,12 @@ const App:React.FunctionComponent = () => {
       <div>
         <h3>Dialog</h3>
         <button onClick={() => {setVisible(!visible)}}>click</button>
-        <Dialog visible={visible}/>
+        <Dialog
+          visible={visible}
+          content={
+            <h2>123</h2>
+          }
+        />
       </div>
     </>
   )
