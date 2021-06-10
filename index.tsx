@@ -20,7 +20,7 @@ const App:React.FunctionComponent = () => {
         <Dialog
           visible={visible}
           content={
-            <h2>123</h2>
+            <span>123</span>
           }
         />
       </div>

@@ -7,11 +7,43 @@
     left: 0;
     background: fade-out(black, 0.5);
   }
-  &-box{
-    background: #fff;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+
+  background: #fff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 16px 20px;
+  min-width: 20%;
+  border-radius: 8px;
+  &-close{
+    font-size: 1.5em;
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    padding: 4px;
+    &:hover{
+      cursor: pointer;
+      border-radius: 4px;
+      background: #f0f0f0;
+    }
+  }
+  &-header{
+    color: #2d3748;
+    font-weight: bold;
+  }
+
+  &-main{
+    margin: 20px 0;
+  }
+
+  &-footer{
+    text-align: right;
+    //>button:first-child{}
+    button{
+      margin: 0 5px;
+      &:first-child{margin-left: 0;}
+      &:last-child{margin-right: 0;}
+    }
   }
 }
