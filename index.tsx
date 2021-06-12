@@ -7,6 +7,9 @@ const App:React.FunctionComponent = () => {
     console.log('pay');
   }
   const [visible, setVisible] = useState(false)
+  const onClose = () => {
+    setVisible(false)
+  }
   return (
     <>
       <div>
@@ -18,10 +21,16 @@ const App:React.FunctionComponent = () => {
         <h3>Dialog</h3>
         <button onClick={() => {setVisible(!visible)}}>click</button>
         <Dialog
+          options={{
+            closeOnMask: true,
+            title: 'Attention',
+            cancelText: 'cancel'
+          }}
           visible={visible}
           content={
             <span>123</span>
           }
+          onClose={onClose}
         />
       </div>
     </>
