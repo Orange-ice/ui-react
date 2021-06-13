@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import { Icon } from './lib';
-import Dialog from './lib/dialog/dialog';
+import Dialog, {alert} from './lib/dialog/dialog';
 const App:React.FunctionComponent = () => {
   const pay = () => {
     console.log('pay');
@@ -32,6 +32,8 @@ const App:React.FunctionComponent = () => {
           }
           onClose={onClose}
         />
+        <hr/>
+        <button onClick={() => alert('hello, 这是dialog的alert')}>alert</button>
       </div>
     </>
   )

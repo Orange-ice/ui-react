@@ -45,4 +45,22 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
   ), document.body);
 };
 
+const alert = (msg: string) => {
+  const onClose = () => {
+    ReactDOM.render(React.cloneElement(component, {visible: false}), div);
+    ReactDOM.unmountComponentAtNode(div);
+    div.remove();
+  };
+  const component = <Dialog
+    visible={true}
+    content={<span>{msg}</span>}
+    options={{hideCancel: true}}
+    onClose={onClose}/>;
+  const div = document.createElement('div');
+  document.body.appendChild(div);
+  ReactDOM.render(component, div);
+};
+
+export {alert};
+
 export default Dialog;
