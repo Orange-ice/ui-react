@@ -45,16 +45,23 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
   ), document.body);
 };
 
-const alert = (msg: string) => {
+const alert = (content: string | React.ReactNode, onConfirm?: () => boolean, options?: PropsOptions) => {
   const onClose = () => {
     ReactDOM.render(React.cloneElement(component, {visible: false}), div);
     ReactDOM.unmountComponentAtNode(div);
     div.remove();
   };
+  const confirm = () => {
+    if (onConfirm) {
+      const result = onConfirm();
+      result && onClose();
+    }
+  };
   const component = <Dialog
     visible={true}
-    content={<span>{msg}</span>}
-    options={{hideCancel: true}}
+    content={<div>{content}</div>}
+    onConfirm={confirm}
+    options={{hideCancel: true, ...options}}
     onClose={onClose}/>;
   const div = document.createElement('div');
   document.body.appendChild(div);
