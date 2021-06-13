@@ -1,13 +1,59 @@
-.ice-button{
+.ice-button {
   white-space: nowrap;
   border: none;
   cursor: pointer;
-  background: #3182ce;
-  color: #ffffff;
+  background: #edf2f7;
+  color: #1a202c;
   padding: 6px 12px;
   border-radius: 4px;
   font-weight: bold;
-  &:hover{
-    background: #2b6cb0;
+
+  &:hover {
+    background: #e2e8f0
+  }
+
+  &.primary {
+    color: #ffffff;
+    background: #3182ce;
+
+    &:hover {
+      background: #2b6cb0;
+    }
+  }
+
+  &.success {
+    color: #ffffff;
+    background: #22c35e;
+
+    &:hover {
+      background: #179848;
+    }
+  }
+
+  &.error {
+    color: #ffffff;
+    background: #e53e3e;
+
+    &:hover {
+      background: #c53030;
+    }
+  }
+
+  &.warning {
+    color: #ffffff;
+    background: #dd6b20;
+
+    &:hover {
+      background: #c05621;
+    }
+  }
+
+  &.info {
+    color: #ffffff;
+    background: #a3a3a3;
+
+    &:hover {
+      background: #858585;
+    }
   }
 }

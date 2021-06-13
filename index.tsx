@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Icon } from './lib';
 import Dialog, {alert} from './lib/dialog/dialog';
 import Button from './lib/button/button';
+import './example.scss'
 const App:React.FunctionComponent = () => {
   const pay = () => {
     console.log('pay');
@@ -36,10 +37,15 @@ const App:React.FunctionComponent = () => {
         <hr/>
         <button onClick={() => alert('hello, 这是dialog的alert')}>alert</button>
       </div>
-      <div>
+      <div className={'buttons'}>
         <h3>Button</h3>
 
-        <Button onClick={pay} effect={'primary'}>click</Button>
+        <Button>Default</Button>
+        <Button onClick={pay} effect={'primary'}>Primary</Button>
+        <Button onClick={pay} effect={'success'}>Success</Button>
+        <Button effect={'info'}>Info</Button>
+        <Button effect={'error'}>Error</Button>
+        <Button effect={'warning'}>Warning</Button>
       </div>
     </>
   )

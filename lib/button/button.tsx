@@ -3,7 +3,7 @@ import React, {ButtonHTMLAttributes} from 'react';
 import classNames from '../helper/classNames';
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement>{
-  effect: 'primary' | 'success' | 'warning' | 'error' | 'info'
+  effect?: 'primary' | 'success' | 'warning' | 'error' | 'info'
 }
 
 const Button: React.FunctionComponent<Props> = (props) => {
