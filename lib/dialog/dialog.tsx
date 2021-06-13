@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import './index.scss';
 import {Icon} from '../index';
 
@@ -26,7 +27,7 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
       onClose(e);
     }
   };
-  return (
+  return ReactDOM.createPortal((
     props.visible ?
       <>
         <div className={'ice-dialog-mask'} onClick={onClickMask}/>
@@ -41,7 +42,7 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
         </div>
       </> :
       null
-  );
+  ), document.body);
 };
 
 export default Dialog;
