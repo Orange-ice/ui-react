@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import { Icon } from './lib';
 import Dialog, {alert} from './lib/dialog/dialog';
+import Button from './lib/button/button';
 const App:React.FunctionComponent = () => {
   const pay = () => {
     console.log('pay');
@@ -34,6 +35,11 @@ const App:React.FunctionComponent = () => {
         />
         <hr/>
         <button onClick={() => alert('hello, 这是dialog的alert')}>alert</button>
+      </div>
+      <div>
+        <h3>Button</h3>
+
+        <Button onClick={pay} effect={'primary'}>click</Button>
       </div>
     </>
   )

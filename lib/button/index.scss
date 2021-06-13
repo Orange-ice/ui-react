@@ -1,0 +1,13 @@
+.ice-button{
+  white-space: nowrap;
+  border: none;
+  cursor: pointer;
+  background: #3182ce;
+  color: #ffffff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-weight: bold;
+  &:hover{
+    background: #2b6cb0;
+  }
+}
