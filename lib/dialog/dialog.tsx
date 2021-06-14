@@ -55,6 +55,8 @@ const alert = (content: string | React.ReactNode, onConfirm?: () => boolean, opt
     if (onConfirm) {
       const result = onConfirm();
       result && onClose();
+    }else{
+      onClose()
     }
   };
   const component = <Dialog
