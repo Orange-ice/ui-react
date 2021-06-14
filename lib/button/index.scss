@@ -12,12 +12,36 @@
     background: #e2e8f0
   }
 
+  &.outline{
+    background: #ffffff;
+    border: solid 1px #E2E8F0;
+    &:hover{
+      background: #edf2f7;
+    }
+  }
+  &.ghost{
+    background: #ffffff;
+    &:hover{background: #edf2f7;}
+  }
+
   &.primary {
     color: #ffffff;
     background: #3182ce;
 
     &:hover {
       background: #2b6cb0;
+    }
+
+    &.outline{
+      background: #fff;
+      border: solid 1px #2b6cb0;
+      color: #2b6cb0;
+      &:hover{background: #ebf8ff;}
+    }
+    &.ghost{
+      color: #2b6cb0;
+      background: #ffffff;
+      &:hover{background: #ebf8ff;}
     }
   }
 
@@ -28,6 +52,18 @@
     &:hover {
       background: #179848;
     }
+
+    &.outline{
+      background: #fff;
+      border: solid 1px #179848;
+      color: #179848;
+      &:hover{background: #f0fff4;}
+    }
+    &.ghost{
+      color: #179848;
+      background: #ffffff;
+      &:hover{background: #f0fff4;}
+    }
   }
 
   &.error {
@@ -36,6 +72,19 @@
 
     &:hover {
       background: #c53030;
+    }
+
+    &.outline{
+      background: #ffffff;
+      border: solid 1px #c53030;
+      color: #c53030;
+      &:hover{background: #fff5f5;}
+    }
+
+    &.ghost{
+      color: #c53030;
+      background: #ffffff;
+      &:hover{background: #fff5f5;}
     }
   }
 
@@ -46,6 +95,18 @@
     &:hover {
       background: #c05621;
     }
+
+    &.outline{
+      background: #ffffff;
+      border: solid 1px #c05621;
+      color: #c05621;
+      &:hover{background: #fffaf0;}
+    }
+    &.ghost{
+      color: #c05621;
+      background: #ffffff;
+      &:hover{background: #fffaf0;}
+    }
   }
 
   &.info {
@@ -54,6 +115,18 @@
 
     &:hover {
       background: #858585;
+    }
+
+    &.outline{
+      background: #ffffff;
+      border: solid 1px #858585;
+      color: #858585;
+      &:hover{background: lighten(#858585, 42%);}
+    }
+    &.ghost{
+      color: #858585;
+      background: #ffffff;
+      &:hover{background: lighten(#858585, 42%);}
     }
   }
 }

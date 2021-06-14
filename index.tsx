@@ -46,6 +46,26 @@ const App:React.FunctionComponent = () => {
         <Button effect={'info'}>Info</Button>
         <Button effect={'error'}>Error</Button>
         <Button effect={'warning'}>Warning</Button>
+
+        <br/>
+        <br/>
+
+        <Button variant={'outline'}>Default</Button>
+        <Button variant={'outline'} effect={'primary'}>Primary</Button>
+        <Button variant={'outline'} effect={'success'}>Success</Button>
+        <Button variant={'outline'} effect={'info'}>Info</Button>
+        <Button variant={'outline'} effect={'error'}>Error</Button>
+        <Button variant={'outline'} effect={'warning'}>Warning</Button>
+
+        <br/>
+        <br/>
+
+        <Button variant={'ghost'}>Default</Button>
+        <Button variant={'ghost'} effect={'primary'}>Primary</Button>
+        <Button variant={'ghost'} effect={'success'}>Success</Button>
+        <Button variant={'ghost'} effect={'info'}>Info</Button>
+        <Button variant={'ghost'} effect={'error'}>Error</Button>
+        <Button variant={'ghost'} effect={'warning'}>Warning</Button>
       </div>
     </>
   )
