@@ -25,8 +25,7 @@ const App:React.FunctionComponent = () => {
         <Dialog
           options={{
             closeOnMask: true,
-            title: 'Attention',
-            cancelText: 'cancel'
+            title: 'Attention'
           }}
           visible={visible}
           content={
