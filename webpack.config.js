@@ -11,6 +11,7 @@ module.exports = {
     library: 'CUI',
     libraryTarget: 'umd'
   },
+  devtool: 'source-map',
   module: {
     rules: [
       {
