@@ -8,6 +8,7 @@ import './example.scss'
 import Header from './lib/layout/header';
 import Content from './lib/layout/content';
 import Footer from './lib/layout/footer';
+import Aside from './lib/layout/aside';
 const App:React.FunctionComponent = () => {
   const pay = () => {
     console.log('pay');
@@ -74,10 +75,33 @@ const App:React.FunctionComponent = () => {
         <div>
           <h3>Layout</h3>
           <Layout className={'hi'}>
-            <Header></Header>
-            <Content></Content>
-            <Footer></Footer>
+            <Header className={'hhh'}>header</Header>
+            <Content className={'ccc'}>内容</Content>
+            <Footer className={'fff'}>footer</Footer>
           </Layout>
+
+          ------- <br/>
+          <Layout>
+            <Header>header</Header>
+            <Layout>
+              <Aside>aside</Aside>
+              <Content>content</Content>
+            </Layout>
+            <Footer>footer</Footer>
+          </Layout>
+
+          ------- <br/>
+          <br/>
+
+          <Layout>
+            <Aside>aside</Aside>
+            <Layout>
+              <Header>header</Header>
+              <Content>content1111111111111111111111111</Content>
+              <Footer>footer</Footer>
+            </Layout>
+          </Layout>
+
         </div>
       </div>
     </>

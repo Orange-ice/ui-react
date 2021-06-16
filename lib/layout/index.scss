@@ -1,0 +1,17 @@
+.ice-layout{
+  border: solid 1px blue;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  &-content{
+    border: solid 1px red;
+    flex-grow: 1;
+  }
+
+  & &{
+    flex-grow: 1;
+  }
+  &.has-aside{
+    flex-direction: row;
+  }
+}
