@@ -1,5 +1,5 @@
 import React, { HTMLAttributes } from 'react';
-import { scopeClassMaker } from '../helper/scopeClassMaker';
+import scopeClassMaker from '../helper/scopeClassMaker';
 import joinClass from '../helper/joinClass';
 
 interface Props extends HTMLAttributes<HTMLElement>{}

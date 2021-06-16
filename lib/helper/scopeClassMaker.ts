@@ -4,4 +4,4 @@ function scopeClassMaker (prefix: string) {
   };
 }
 
-export {scopeClassMaker};
+export default scopeClassMaker;
