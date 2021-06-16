@@ -2,7 +2,7 @@ import React from 'react';
 
 import './importIcons'
 import './icon.scss'
-import classNames from '../helper/classNames';
+import joinClass from '../helper/joinClass';
 
 interface IconProps extends React.SVGAttributes<SVGElement>{
   name: string
@@ -10,7 +10,7 @@ interface IconProps extends React.SVGAttributes<SVGElement>{
 
 const Icon: React.FunctionComponent<IconProps> = ({name, className, ...reset}) => {
   return (
-    <svg className={classNames('ice-icon', className)} {...reset}>
+    <svg className={joinClass('ice-icon', className)} {...reset}>
       <use xlinkHref={`#${name}`}/>
     </svg>
   );

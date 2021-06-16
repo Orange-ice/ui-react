@@ -1,6 +1,6 @@
 import './index.scss';
 import React, {ButtonHTMLAttributes} from 'react';
-import classNames from '../helper/classNames';
+import joinClass from '../helper/joinClass';
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement>{
   effect?: 'primary' | 'success' | 'warning' | 'error' | 'info',
@@ -9,7 +9,7 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement>{
 
 const Button: React.FunctionComponent<Props> = (props) => {
   const {variant, effect, className, children, ...rest} = props
-  const classes = classNames('ice-button', className, effect, variant)
+  const classes = joinClass('ice-button', className, effect, variant)
   return (
     <button className={classes} {...rest}>{children}</button>
   );

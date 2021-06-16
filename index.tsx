@@ -3,7 +3,11 @@ import ReactDOM from 'react-dom';
 import { Icon } from './lib';
 import Dialog, {alert} from './lib/dialog/dialog';
 import Button from './lib/button/button';
+import Layout from './lib/layout/layout';
 import './example.scss'
+import Header from './lib/layout/header';
+import Content from './lib/layout/content';
+import Footer from './lib/layout/footer';
 const App:React.FunctionComponent = () => {
   const pay = () => {
     console.log('pay');
@@ -65,6 +69,16 @@ const App:React.FunctionComponent = () => {
         <Button variant={'ghost'} effect={'info'}>Info</Button>
         <Button variant={'ghost'} effect={'error'}>Error</Button>
         <Button variant={'ghost'} effect={'warning'}>Warning</Button>
+
+        <hr/>
+        <div>
+          <h3>Layout</h3>
+          <Layout className={'hi'}>
+            <Header></Header>
+            <Content></Content>
+            <Footer></Footer>
+          </Layout>
+        </div>
       </div>
     </>
   )
