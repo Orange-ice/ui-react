@@ -1,3 +1,4 @@
+@import "lib/color.scss";
 .ice-button {
   white-space: nowrap;
   border: none;
@@ -27,20 +28,20 @@
 
   &.primary {
     color: #ffffff;
-    background: #3182ce;
+    background: $primary;
 
     &:hover {
-      background: #2b6cb0;
+      background: $primary-hover;
     }
 
     &.outline{
       background: #fff;
-      border: solid 1px #2b6cb0;
-      color: #2b6cb0;
+      border: solid 1px $primary-hover;
+      color: $primary-hover;
       &:hover{background: #ebf8ff;}
     }
     &.ghost{
-      color: #2b6cb0;
+      color: $primary-hover;
       background: #ffffff;
       &:hover{background: #ebf8ff;}
     }
@@ -48,20 +49,20 @@
 
   &.success {
     color: #ffffff;
-    background: #22c35e;
+    background: $success;
 
     &:hover {
-      background: #179848;
+      background: $success-hover;
     }
 
     &.outline{
       background: #fff;
-      border: solid 1px #179848;
-      color: #179848;
+      border: solid 1px $success-hover;
+      color: $success-hover;
       &:hover{background: #f0fff4;}
     }
     &.ghost{
-      color: #179848;
+      color: $success-hover;
       background: #ffffff;
       &:hover{background: #f0fff4;}
     }
@@ -69,21 +70,21 @@
 
   &.error {
     color: #ffffff;
-    background: #e53e3e;
+    background: $error;
 
     &:hover {
-      background: #c53030;
+      background: $error-hover;
     }
 
     &.outline{
       background: #ffffff;
-      border: solid 1px #c53030;
-      color: #c53030;
+      border: solid 1px $error-hover;
+      color: $error-hover;
       &:hover{background: #fff5f5;}
     }
 
     &.ghost{
-      color: #c53030;
+      color: $error-hover;
       background: #ffffff;
       &:hover{background: #fff5f5;}
     }
@@ -91,20 +92,20 @@
 
   &.warning {
     color: #ffffff;
-    background: #dd6b20;
+    background: $warning;
 
     &:hover {
-      background: #c05621;
+      background: $warning-hover;
     }
 
     &.outline{
       background: #ffffff;
-      border: solid 1px #c05621;
-      color: #c05621;
+      border: solid 1px $warning-hover;
+      color: $warning-hover;
       &:hover{background: #fffaf0;}
     }
     &.ghost{
-      color: #c05621;
+      color: $warning-hover;
       background: #ffffff;
       &:hover{background: #fffaf0;}
     }
@@ -112,22 +113,22 @@
 
   &.info {
     color: #ffffff;
-    background: #a3a3a3;
+    background: $info;
 
     &:hover {
-      background: #858585;
+      background: $info-hover;
     }
 
     &.outline{
       background: #ffffff;
-      border: solid 1px #858585;
-      color: #858585;
-      &:hover{background: lighten(#858585, 42%);}
+      border: solid 1px $info-hover;
+      color: $info-hover;
+      &:hover{background: lighten($info-hover, 42%);}
     }
     &.ghost{
-      color: #858585;
+      color: $info-hover;
       background: #ffffff;
-      &:hover{background: lighten(#858585, 42%);}
+      &:hover{background: lighten($info-hover, 42%);}
     }
   }
 }
