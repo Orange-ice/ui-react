@@ -7,7 +7,12 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack serve --config webpack.config.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.pro.js",
-    "test": "cross-env NODE_ENV=test jest --config=jest.config.js --runInBand"
+    "test": "cross-env NODE_ENV=test jest --config=jest.config.js --runInBand",
+    "ci": "cross-env NODE_ENV=test jest --config=jest.config.ci.js"
+  },
+  "jest-junit": {
+    "outputDirectory": "./test-results/jest/",
+    "outputName": "results.xml"
   },
   "repository": {
     "type": "git",
@@ -34,6 +39,7 @@
     "enzyme-adapter-react-16": "^1.15.6",
     "html-webpack-plugin": "^5.3.1",
     "jest": "^27.0.4",
+    "jest-junit": "^12.2.0",
     "node-sass": "^6.0.0",
     "react-test-renderer": "^17.0.2",
     "sass-loader": "^12.0.0",
