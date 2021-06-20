@@ -10,27 +10,34 @@
   font-weight: bold;
   line-height: 14px;
 
-  &:hover {
+  &:not([disabled]):hover {
     background: #e2e8f0
   }
 
   &.outline{
     background: #ffffff;
     border: solid 1px #E2E8F0;
-    &:hover{
+    &:not([disabled]):hover{
       background: #edf2f7;
     }
   }
   &.ghost{
     background: #ffffff;
-    &:hover{background: #edf2f7;}
+    &:not([disabled]):hover{background: #edf2f7;}
+  }
+
+  &[disabled] {
+    cursor: no-drop;
+    background: #f8fafc;
+    color: #a3a6ab;
+    &.outline, &.ghost{background: #ffffff;}
   }
 
   &.primary {
     color: #ffffff;
     background: $primary;
 
-    &:hover {
+    &:not([disabled]):hover {
       background: $primary-hover;
     }
 
@@ -38,12 +45,24 @@
       background: #fff;
       border: solid 1px $primary-hover;
       color: $primary-hover;
-      &:hover{background: #ebf8ff;}
+      &:not([disabled]):hover{background: #ebf8ff;}
     }
     &.ghost{
       color: $primary-hover;
       background: #ffffff;
-      &:hover{background: #ebf8ff;}
+      &:not([disabled]):hover{background: #ebf8ff;}
+    }
+  }
+  &[disabled].primary{
+    background: $primary-disabled;
+    &.outline{
+      background: #ffffff;
+      color: $primary-disabled;
+      border-color: $primary-disabled;
+    }
+    &.ghost{
+      color: $primary-disabled;
+      background: #ffffff;
     }
   }
 
@@ -51,7 +70,7 @@
     color: #ffffff;
     background: $success;
 
-    &:hover {
+    &:not([disabled]):hover {
       background: $success-hover;
     }
 
@@ -59,20 +78,33 @@
       background: #fff;
       border: solid 1px $success-hover;
       color: $success-hover;
-      &:hover{background: #f0fff4;}
+      &:not([disabled]):hover{background: #f0fff4;}
     }
     &.ghost{
       color: $success-hover;
       background: #ffffff;
-      &:hover{background: #f0fff4;}
+      &:not([disabled]):hover{background: #f0fff4;}
     }
   }
+  &[disabled].success{
+    background: $success-disabled;
+    &.outline{
+      background: #ffffff;
+      color: $success-disabled;
+      border-color: $success-disabled;
+    }
+    &.ghost{
+      color: $success-disabled;
+      background: #ffffff;
+    }
+  }
+
 
   &.error {
     color: #ffffff;
     background: $error;
 
-    &:hover {
+    &:not([disabled]):hover {
       background: $error-hover;
     }
 
@@ -80,13 +112,25 @@
       background: #ffffff;
       border: solid 1px $error-hover;
       color: $error-hover;
-      &:hover{background: #fff5f5;}
+      &:not([disabled]):hover{background: #fff5f5;}
     }
 
     &.ghost{
       color: $error-hover;
       background: #ffffff;
-      &:hover{background: #fff5f5;}
+      &:not([disabled]):hover{background: #fff5f5;}
+    }
+  }
+  &[disabled].error{
+    background: $error-disabled;
+    &.outline{
+      background: #ffffff;
+      color: $error-disabled;
+      border-color: $error-disabled;
+    }
+    &.ghost{
+      color: $error-disabled;
+      background: #ffffff;
     }
   }
 
@@ -94,7 +138,7 @@
     color: #ffffff;
     background: $warning;
 
-    &:hover {
+    &:not([disabled]):hover {
       background: $warning-hover;
     }
 
@@ -102,12 +146,24 @@
       background: #ffffff;
       border: solid 1px $warning-hover;
       color: $warning-hover;
-      &:hover{background: #fffaf0;}
+      &:not([disabled]):hover{background: #fffaf0;}
     }
     &.ghost{
       color: $warning-hover;
       background: #ffffff;
-      &:hover{background: #fffaf0;}
+      &:not([disabled]):hover{background: #fffaf0;}
+    }
+  }
+  &[disabled].warning{
+    background: $warning-disabled;
+    &.outline{
+      background: #ffffff;
+      color: $warning-disabled;
+      border-color: $warning-disabled;
+    }
+    &.ghost{
+      color: $warning-disabled;
+      background: #ffffff;
     }
   }
 
@@ -115,7 +171,7 @@
     color: #ffffff;
     background: $info;
 
-    &:hover {
+    &:not([disabled]):hover {
       background: $info-hover;
     }
 
@@ -123,12 +179,24 @@
       background: #ffffff;
       border: solid 1px $info-hover;
       color: $info-hover;
-      &:hover{background: lighten($info-hover, 42%);}
+      &:not([disabled]):hover{background: lighten($info-hover, 42%);}
     }
     &.ghost{
       color: $info-hover;
       background: #ffffff;
-      &:hover{background: lighten($info-hover, 42%);}
+      &:not([disabled]):hover{background: lighten($info-hover, 42%);}
+    }
+  }
+  &[disabled].info{
+    background: $info-disabled;
+    &.outline{
+      background: #ffffff;
+      color: $info-disabled;
+      border-color: $info-disabled;
+    }
+    &.ghost{
+      color: $info-disabled;
+      background: #ffffff;
     }
   }
 }

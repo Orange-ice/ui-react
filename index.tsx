@@ -44,32 +44,32 @@ const App:React.FunctionComponent = () => {
       <div className={'buttons'}>
         <h3>Button</h3>
 
-        <Button>Default</Button>
-        <Button onClick={pay} effect={'primary'}>Primary</Button>
-        <Button onClick={pay} effect={'success'}>Success</Button>
-        <Button effect={'info'}>Info</Button>
-        <Button effect={'error'}>Error</Button>
-        <Button effect={'warning'}>Warning</Button>
+        <Button disabled>Default</Button>
+        <Button onClick={pay} effect={'primary'} disabled>Primary</Button>
+        <Button disabled onClick={pay} effect={'success'}>Success</Button>
+        <Button disabled effect={'info'}>Info</Button>
+        <Button disabled effect={'error'}>Error</Button>
+        <Button disabled effect={'warning'}>Warning</Button>
 
         <br/>
         <br/>
 
-        <Button variant={'outline'}>Default</Button>
-        <Button variant={'outline'} effect={'primary'}>Primary</Button>
-        <Button variant={'outline'} effect={'success'}>Success</Button>
-        <Button variant={'outline'} effect={'info'}>Info</Button>
-        <Button variant={'outline'} effect={'error'}>Error</Button>
-        <Button variant={'outline'} effect={'warning'}>Warning</Button>
+        <Button variant={'outline'} disabled>Default</Button>
+        <Button variant={'outline'} effect={'primary'} disabled>Primary</Button>
+        <Button variant={'outline'} effect={'success'} disabled>Success</Button>
+        <Button disabled variant={'outline'} effect={'info'}>Info</Button>
+        <Button disabled variant={'outline'} effect={'error'}>Error</Button>
+        <Button disabled variant={'outline'} effect={'warning'}>Warning</Button>
 
         <br/>
         <br/>
 
-        <Button variant={'ghost'}>Default</Button>
-        <Button variant={'ghost'} effect={'primary'}>Primary</Button>
-        <Button variant={'ghost'} effect={'success'}>Success</Button>
-        <Button variant={'ghost'} effect={'info'}>Info</Button>
-        <Button variant={'ghost'} effect={'error'}>Error</Button>
-        <Button variant={'ghost'} effect={'warning'}>Warning</Button>
+        <Button variant={'ghost'} disabled>Default</Button>
+        <Button variant={'ghost'} effect={'primary'} disabled>Primary</Button>
+        <Button disabled variant={'ghost'} effect={'success'}>Success</Button>
+        <Button disabled variant={'ghost'} effect={'info'}>Info</Button>
+        <Button disabled variant={'ghost'} effect={'error'}>Error</Button>
+        <Button disabled variant={'ghost'} effect={'warning'}>Warning</Button>
 
         <hr/>
         <div>
