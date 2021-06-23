@@ -1,9 +1,10 @@
 {
-  "name": "ui-react",
-  "version": "1.0.0",
+  "name": "ice-ui-react",
+  "version": "0.0.1",
   "description": "",
   "main": "dist/lib/index",
   "types": "dist/lib/index",
+  "files": ["/dist/**/*"],
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack serve --config webpack.config.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.pro.js",
