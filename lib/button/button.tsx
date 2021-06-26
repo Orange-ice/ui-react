@@ -7,7 +7,7 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement>{
   variant?: 'outline' | 'ghost'
 }
 
-const Cbutton: React.FunctionComponent<Props> = (props) => {
+const Button: React.FunctionComponent<Props> = (props) => {
   const {variant, effect, className, children, ...rest} = props
   const classes = joinClass('ice-button', className, effect, variant)
   return (
@@ -15,4 +15,4 @@ const Cbutton: React.FunctionComponent<Props> = (props) => {
   );
 };
 
-export default Cbutton;
+export default Button;

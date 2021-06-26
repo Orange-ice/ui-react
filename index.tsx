@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import { Icon } from './lib';
 import Dialog, {alert} from './lib/dialog/dialog';
-import Cbutton from './lib/c-button/cbutton';
+import Button from './lib/button/button';
 import Layout from './lib/layout/layout';
 import './example.scss'
 import Header from './lib/layout/header';
@@ -44,32 +44,32 @@ const App:React.FunctionComponent = () => {
       <div className={'buttons'}>
         <h3>Button</h3>
 
-        <Cbutton disabled>Default</Cbutton>
-        <Cbutton onClick={pay} effect={'primary'} disabled>Primary</Cbutton>
-        <Cbutton disabled onClick={pay} effect={'success'}>Success</Cbutton>
-        <Cbutton disabled effect={'info'}>Info</Cbutton>
-        <Cbutton disabled effect={'error'}>Error</Cbutton>
-        <Cbutton disabled effect={'warning'}>Warning</Cbutton>
+        <Button disabled>Default</Button>
+        <Button onClick={pay} effect={'primary'} disabled>Primary</Button>
+        <Button disabled onClick={pay} effect={'success'}>Success</Button>
+        <Button disabled effect={'info'}>Info</Button>
+        <Button disabled effect={'error'}>Error</Button>
+        <Button disabled effect={'warning'}>Warning</Button>
 
         <br/>
         <br/>
 
-        <Cbutton variant={'outline'} disabled>Default</Cbutton>
-        <Cbutton variant={'outline'} effect={'primary'} disabled>Primary</Cbutton>
-        <Cbutton variant={'outline'} effect={'success'} disabled>Success</Cbutton>
-        <Cbutton disabled variant={'outline'} effect={'info'}>Info</Cbutton>
-        <Cbutton disabled variant={'outline'} effect={'error'}>Error</Cbutton>
-        <Cbutton disabled variant={'outline'} effect={'warning'}>Warning</Cbutton>
+        <Button variant={'outline'} disabled>Default</Button>
+        <Button variant={'outline'} effect={'primary'} disabled>Primary</Button>
+        <Button variant={'outline'} effect={'success'} disabled>Success</Button>
+        <Button disabled variant={'outline'} effect={'info'}>Info</Button>
+        <Button disabled variant={'outline'} effect={'error'}>Error</Button>
+        <Button disabled variant={'outline'} effect={'warning'}>Warning</Button>
 
         <br/>
         <br/>
 
-        <Cbutton variant={'ghost'} disabled>Default</Cbutton>
-        <Cbutton variant={'ghost'} effect={'primary'} disabled>Primary</Cbutton>
-        <Cbutton disabled variant={'ghost'} effect={'success'}>Success</Cbutton>
-        <Cbutton disabled variant={'ghost'} effect={'info'}>Info</Cbutton>
-        <Cbutton disabled variant={'ghost'} effect={'error'}>Error</Cbutton>
-        <Cbutton disabled variant={'ghost'} effect={'warning'}>Warning</Cbutton>
+        <Button variant={'ghost'} disabled>Default</Button>
+        <Button variant={'ghost'} effect={'primary'} disabled>Primary</Button>
+        <Button disabled variant={'ghost'} effect={'success'}>Success</Button>
+        <Button disabled variant={'ghost'} effect={'info'}>Info</Button>
+        <Button disabled variant={'ghost'} effect={'error'}>Error</Button>
+        <Button disabled variant={'ghost'} effect={'warning'}>Warning</Button>
 
         <hr/>
         <div>

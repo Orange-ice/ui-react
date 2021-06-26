@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
 import {Icon} from '../index';
-import Cbutton from '../c-button/cbutton';
+import Button from '../button/button';
 
 interface PropsOptions {
   title?: string
@@ -37,8 +37,8 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
           <header className={'ice-dialog-header'}>{options?.title || '提示'}</header>
           <main className={'ice-dialog-main'}>{content}</main>
           <footer className={'ice-dialog-footer'}>
-            {!options?.hideCancel && <Cbutton onClick={onClose}>{options?.cancelText || '取消'}</Cbutton>}
-            <Cbutton effect='primary' onClick={onConfirm || onClose}>{options?.confirmText || '确认'}</Cbutton>
+            {!options?.hideCancel && <Button onClick={onClose}>{options?.cancelText || '取消'}</Button>}
+            <Button effect='primary' onClick={onConfirm || onClose}>{options?.confirmText || '确认'}</Button>
           </footer>
         </div>
       </> :
