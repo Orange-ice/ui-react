@@ -9,8 +9,3 @@ export {default as Button} from './button/button'
 
 import './index.scss'
 
-// import Icon from './icon/icon';
-// import Dialog from './dialog/dialog';
-// import Button from './button/Button';
-
-// export {Icon, Button, Dialog};
