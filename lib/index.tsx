@@ -10,6 +10,6 @@ import './index.scss'
 
 import Icon from './icon/icon';
 import Dialog from './dialog/dialog';
-import Button from './button/button';
+import Cbutton from './c-button/cbutton';
 
-export {Icon, Button, Dialog};
+export {Icon, Cbutton, Dialog};
