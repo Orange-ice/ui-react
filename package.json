@@ -34,6 +34,7 @@
     "@types/jest": "^26.0.23",
     "@types/react": "^17.0.9",
     "@types/react-dom": "^17.0.6",
+    "@types/react-router-dom": "^5.1.7",
     "@types/react-test-renderer": "^17.0.1",
     "babel-jest": "^27.0.2",
     "babel-preset-react-app": "^10.0.0",
@@ -59,6 +60,7 @@
   "dependencies": {
     "jsdom-global": "^3.0.2",
     "react": "16",
-    "react-dom": "16"
+    "react-dom": "16",
+    "react-router-dom": "^5.2.0"
   }
 }

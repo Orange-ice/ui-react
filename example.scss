@@ -1,5 +1,25 @@
-.buttons{
-  button{
-    margin-right: 16px;
+html,body, #root{
+  height: 100%;
+}
+*, *::before, *::after {margin: 0;padding: 0;box-sizing: border-box;}
+a{text-decoration: none; color: inherit;}
+h1, h2, h3, h4, h5, h6 {font-weight: normal;}
+
+.site{
+  &-aside{
+    border-right: solid 1px #cccccc;
+    &-nav{
+      display: flex;
+      flex-direction: column;
+      a{
+        margin-bottom: 8px;
+        padding: 4px 24px;
+        color: #2d3748;
+        &.active{
+          color: #285e61;
+          background: #e6fffa;
+        }
+      }
+    }
   }
 }
