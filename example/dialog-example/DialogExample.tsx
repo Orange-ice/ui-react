@@ -1,9 +1,12 @@
 import React from 'react';
+import ExampleLayout from '../ExampleLayout';
 
 const DialogExample = () => {
-    return (
-        <div>Dialog</div>
-    )
-}
+  return (
+    <ExampleLayout>
+      <div>Dialog</div>
+    </ExampleLayout>
+  );
+};
 
-export default DialogExample
+export default DialogExample;
