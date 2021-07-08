@@ -6,6 +6,7 @@ export {default as Header} from './layout/header'
 export {default as Content} from './layout/content'
 export {default as Footer} from './layout/footer'
 export {default as Button} from './button/button'
+export {default as alert} from './dialog/dialog'
 
 import './index.scss'
 
