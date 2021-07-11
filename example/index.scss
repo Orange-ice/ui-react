@@ -1,0 +1,14 @@
+.example-wrapper{
+  margin-left: 40px;
+
+  .example{
+    margin-top: 16px;
+    >button, svg{
+      margin-right: 16px;
+    }
+    >svg{
+      width: 36px;
+      height: 36px;
+    }
+  }
+}
