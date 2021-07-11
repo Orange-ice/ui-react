@@ -4,6 +4,7 @@ import { HashRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 import IconExample from './example/icon-example/IconExample';
 import ButtonExample from './example/button-example/ButtonExample';
 import DialogExample from './example/dialog-example/DialogExample';
+import FormExample from './example/form-example/FormExample';
 
 import './example.scss';
 import Home from './example/Home';
@@ -16,6 +17,7 @@ const App: React.FunctionComponent = () => {
         <Route path="/icon" component={IconExample}/>
         <Route path="/button" component={ButtonExample}/>
         <Route path="/dialog" component={DialogExample}/>
+        <Route path="/form" component={FormExample}/>
         <Redirect from="/" to="/home"/>
       </Switch>
     </Router>

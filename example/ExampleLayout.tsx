@@ -16,6 +16,7 @@ const ExampleLayout: React.FC = (props) => {
             <NavLink to="/button">Button</NavLink>
             <NavLink to="/icon">Icon</NavLink>
             <NavLink to="/dialog">Dialog</NavLink>
+            <NavLink to="/form">Form</NavLink>
           </div>
         </Aside>
         <Content>
