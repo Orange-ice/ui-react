@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Input from '../input/input';
 interface FieldsItem {
   name: string,
   label: string,
@@ -34,7 +34,7 @@ const Form: React.FC<FormProps> = (props) => {
       {fields.map(field =>
         <div key={field.name}>
           {field.label}
-          <input
+          <Input
             type={field.input.type}
             value={value[field.name]}
             onChange={(e) => onInputChange(field.name, e.target.value)}/>
