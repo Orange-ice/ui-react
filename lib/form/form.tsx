@@ -1,5 +1,7 @@
 import React from 'react';
 import Input from '../input/input';
+import './form.scss';
+
 interface FieldsItem {
   name: string,
   label: string,
@@ -31,17 +33,30 @@ const Form: React.FC<FormProps> = (props) => {
   };
   return (
     <form onSubmit={onFormSubmit}>
-      {fields.map(field =>
-        <div key={field.name}>
-          {field.label}
-          <Input
-            type={field.input.type}
-            value={value[field.name]}
-            onChange={(e) => onInputChange(field.name, e.target.value)}/>
-          <div>{errors[field.name]}</div>
-        </div>
-      )}
-      <div>{buttons}</div>
+      <table className="ice-form-table">
+        <tbody>
+        {fields.map(field =>
+          <tr className="ice-form-tr" key={field.name}>
+            <td className="ice-form-td">
+              <span className="ice-form-label">{field.label}</span>
+            </td>
+            <td className="ice-form-td">
+              <Input
+                type={field.input.type}
+                value={value[field.name]}
+                onChange={(e) => onInputChange(field.name, e.target.value)}/>
+              <div>{errors[field.name]}</div>
+            </td>
+          </tr>
+        )}
+        <tr className="ice-form-tr">
+          <td className="ice-form-td"/>
+          <td className="ice-form-td">
+            <div>{buttons}</div>
+          </td>
+        </tr>
+        </tbody>
+      </table>
     </form>
   );
 };
