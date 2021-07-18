@@ -45,7 +45,7 @@ const Form: React.FC<FormProps> = (props) => {
                 type={field.input.type}
                 value={value[field.name]}
                 onChange={(e) => onInputChange(field.name, e.target.value)}/>
-              <div>{errors[field.name]}</div>
+              <div className="ice-form-error">{errors[field.name] || <span>&nbsp;</span>}</div>
             </td>
           </tr>
         )}
