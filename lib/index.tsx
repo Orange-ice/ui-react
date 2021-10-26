@@ -8,6 +8,7 @@ export {default as Footer} from './layout/footer'
 export {default as Button} from './button/button'
 import {alert} from './dialog/dialog';
 export {alert}
+export {default as Scroll} from './scroll/scroll'
 
 import './index.scss'
 

@@ -1,0 +1,13 @@
+.ice-scroll{
+    position: relative;
+    overflow: hidden;
+    border: solid 1px red;
+    &-inner{
+        overflow: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: -16px;
+        bottom: 0;
+    }
+}
