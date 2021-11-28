@@ -16,6 +16,8 @@ const Scroll: React.FC<Props> = (props) => {
     const firstYRef = useRef(0); // 鼠标点击时，鼠标距离容器顶部的距离
     const firstBarTopRef = useRef(0); // 鼠标点击时，已滚动的高度
 
+    const [barVisible, setBarVisible] = useState(false); // 控制滚动条可见性
+
     // 设置 _setBarTop 的限制
     const setBarTop = (number: number) => {
         if (number < 0) return;
@@ -47,13 +49,19 @@ const Scroll: React.FC<Props> = (props) => {
         if (draggingRef.current) e.preventDefault();
     };
 
+    const timeIdRef = useRef<number | null>(null);
     const onScroll: UIEventHandler = (e) => {
+        setBarVisible(true);
         // 计算滚动的高度
         const {current} = containerRef;
         const scrollHeight = current!.scrollHeight;
         const viewHeight = current!.getBoundingClientRect().height;
         const scrollTop = current!.scrollTop;
         setBarTop(scrollTop * viewHeight / scrollHeight);
+        if (timeIdRef.current !== null) window.clearTimeout(timeIdRef.current);
+        timeIdRef.current = window.setTimeout(() => {
+            setBarVisible(false);
+        }, 300);
     };
 
     // 计算滚动条高度（在mounted阶段执行，containerRef.current 不会为空）
@@ -95,11 +103,12 @@ const Scroll: React.FC<Props> = (props) => {
             >
                 {children}
             </div>
-            <div className="ice-scroll-track">
+            {barVisible && <div className="ice-scroll-track">
                 <div className="ice-scroll-track-bar"
                      onMouseDown={onMouseDownBar}
                      style={{height: barHeight, transform: `translateY(${barTop}px)`}}/>
-            </div>
+            </div>}
+
         </div>
     );
 };
