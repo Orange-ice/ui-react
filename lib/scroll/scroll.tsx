@@ -1,13 +1,21 @@
-import React, {HTMLAttributes, MouseEventHandler, UIEventHandler, useEffect, useRef, useState} from 'react';
+import React, {
+    HTMLAttributes,
+    MouseEventHandler,
+    TouchEventHandler,
+    UIEventHandler,
+    useEffect,
+    useRef,
+    useState
+} from 'react';
 import './scroll.scss';
 import scrollBarWidth from './scrollBar-width';
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
-
+    onPull?: () => void; // 下拉刷新方法
 }
 
 const Scroll: React.FC<Props> = (props) => {
-    const {children, ...rest} = props;
+    const {children, onPull, ...rest} = props;
     const [barHeight, setBarHeight] = useState(0); // 滚动条高度
     const [barTop, _setBarTop] = useState(0); // 滚动条滚动的高度
     const containerRef = useRef<HTMLDivElement>(null);
@@ -94,12 +102,61 @@ const Scroll: React.FC<Props> = (props) => {
     const onMouseUpBar = (e: MouseEvent) => {
         draggingRef.current = false;
     };
+
+    const [translateY, _setTranslateY] = useState(0);
+    const setTranslateY = (val: number) => {
+        if (val < 0) {
+            val = 0;
+        } else if (val > 60) {
+            val = 60;
+        }
+        _setTranslateY(val);
+    };
+    // 上次手指的位置
+    const lastYRef = useRef(0);
+    // 是否处于下拉刷新状态
+    const polling = useRef(false);
+    const moveCount = useRef(0); // 记录划动次数，第一次滑动才进入下拉更新
+
+    const onTouchStart: TouchEventHandler = (e) => {
+        // scrollTop为0时才可进入下拉更新状态
+        const scrollTop = containerRef.current!.scrollTop;
+        if (scrollTop !== 0) return;
+        polling.current = true;
+        lastYRef.current = e.touches[0].clientY;
+        moveCount.current = 0;
+    };
+
+    const onTouchMove: TouchEventHandler = (e) => {
+        const deltaY = e.touches[0].clientY - lastYRef.current;
+        moveCount.current += 1;
+        // deltaY < 0 时是往上划
+        if (moveCount.current === 1 && deltaY < 0) {
+            polling.current = false;
+            return;
+        }
+        if (!polling.current) return;
+        setTranslateY(translateY + deltaY);
+        lastYRef.current = e.touches[0].clientY;
+    };
+
+    const onTouchEnd: TouchEventHandler = () => {
+        if (polling.current) {
+            setTranslateY(0);
+            onPull?.();
+            polling.current = false;
+        }
+    };
+
     return (
         <div className="ice-scroll" {...rest}>
             <div className="ice-scroll-inner"
-                 style={{right: -scrollBarWidth()}}
+                 style={{right: -scrollBarWidth(), transform: `translateY(${translateY}px)`}}
                  onScroll={onScroll}
                  ref={containerRef}
+                 onTouchStart={onTouchStart}
+                 onTouchMove={onTouchMove}
+                 onTouchEnd={onTouchEnd}
             >
                 {children}
             </div>
