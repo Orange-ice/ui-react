@@ -58,7 +58,7 @@ const Scroll: React.FC<Props> = (props) => {
     };
 
     const timeIdRef = useRef<number | null>(null);
-    const onScroll: UIEventHandler = (e) => {
+    const onScroll: UIEventHandler = () => {
         setBarVisible(true);
         // 计算滚动的高度
         const {current} = containerRef;
@@ -99,7 +99,7 @@ const Scroll: React.FC<Props> = (props) => {
         }
     };
     // 监听鼠标松开
-    const onMouseUpBar = (e: MouseEvent) => {
+    const onMouseUpBar = () => {
         draggingRef.current = false;
     };
 
@@ -115,14 +115,14 @@ const Scroll: React.FC<Props> = (props) => {
     // 上次手指的位置
     const lastYRef = useRef(0);
     // 是否处于下拉刷新状态
-    const polling = useRef(false);
+    const pulling = useRef(false);
     const moveCount = useRef(0); // 记录划动次数，第一次滑动才进入下拉更新
 
     const onTouchStart: TouchEventHandler = (e) => {
         // scrollTop为0时才可进入下拉更新状态
         const scrollTop = containerRef.current!.scrollTop;
         if (scrollTop !== 0) return;
-        polling.current = true;
+        pulling.current = true;
         lastYRef.current = e.touches[0].clientY;
         moveCount.current = 0;
     };
@@ -132,19 +132,19 @@ const Scroll: React.FC<Props> = (props) => {
         moveCount.current += 1;
         // deltaY < 0 时是往上划
         if (moveCount.current === 1 && deltaY < 0) {
-            polling.current = false;
+            pulling.current = false;
             return;
         }
-        if (!polling.current) return;
+        if (!pulling.current) return;
         setTranslateY(translateY + deltaY);
         lastYRef.current = e.touches[0].clientY;
     };
 
     const onTouchEnd: TouchEventHandler = () => {
-        if (polling.current) {
+        if (pulling.current) {
             setTranslateY(0);
             onPull?.();
-            polling.current = false;
+            pulling.current = false;
         }
     };
 
@@ -165,6 +165,9 @@ const Scroll: React.FC<Props> = (props) => {
                      onMouseDown={onMouseDownBar}
                      style={{height: barHeight, transform: `translateY(${barTop}px)`}}/>
             </div>}
+            <div className="ice-scroll-pulling" style={{height: translateY}}>
+                {translateY > 12 && <span>松开即可刷新</span>}
+            </div>
 
         </div>
     );

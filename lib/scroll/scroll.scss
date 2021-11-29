@@ -20,7 +20,8 @@
         position: absolute;
         top: 0;
         right: 0;
-        &-bar{
+
+        &-bar {
             background: #7f7f7f;
             height: 30px;
             top: 0;
@@ -29,5 +30,13 @@
             width: 6px;
             border-radius: 3px;
         }
+    }
+
+    &-pulling {
+        background: #cecbd5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 12px;
     }
 }
