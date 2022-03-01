@@ -1,0 +1,60 @@
+.ice-drawer {
+  width: 378px;
+  height: 100%;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: all linear 250ms;
+
+  &.visible {
+    transform: translateX(0);
+  }
+
+  &.invisible {
+    transform: translateX(-100%);
+  }
+
+  // 遮罩层
+  &-mask {
+    z-index: -1;
+    opacity: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: fade-out(black, 0.5);
+    transition: opacity linear 250ms;
+
+    &.visible {
+      z-index: 0;
+      opacity: 1;
+    }
+  }
+
+  // 抽屉头部
+  &-header {
+    padding: 16px 24px;
+    border-radius: 2px;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+  }
+
+  &-close {
+    cursor: pointer;
+  }
+
+  &-title {
+    margin-left: 20px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  // 抽屉内容部分
+  &-content {
+    padding: 24px;
+  }
+}
